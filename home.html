@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .apod-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .date {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .explanation {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>NASA Astronomy Picture of the Day</h1>
+    <div class="apod-container">
+        <div id="apod-content">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = 'ukoken'; // 実際のAPIキーに置き換えてください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=2010-04-01`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+                
+                const apodContent = document.getElementById('apod-content');
+                apodContent.innerHTML = `
+                    <h2>${data.title}</h2>
+                    <p class="date">${data.date}</p>
+                    <img src="${data.url}" alt="${data.title}">
+                    <div class="explanation">
+                        <p>${data.explanation}</p>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-content').innerHTML = 
+                    '<p>画像の読み込み中にエラーが発生しました。</p>';
+            }
+        }
+
+        fetchAPOD();
+    </script>
+</body>
+</html>
