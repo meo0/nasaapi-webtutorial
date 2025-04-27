@@ -2,12 +2,17 @@
 NASAのAPIを使用して、Webアプリを作ってみよう
 
 ## 目次
-1. [APIのしくみ](#1-apiのしくみ)
-2. [環境構築](#2-環境構築)
-3. [GithubからCloneする](#3-githubからcloneする)
-4. [APIを取得しよう](#4-apiを取得しよう)
-5. [コードの説明](#5-コードの説明)
-6. [いじってみよう](#6-いじってみよう)
+- [nasaapi-webtutorial](#nasaapi-webtutorial)
+  - [目次](#目次)
+  - [1. APIのしくみ](#1-apiのしくみ)
+    - [APIとは？](#apiとは)
+    - [仕組みの流れ](#仕組みの流れ)
+    - [APIを使うメリット](#apiを使うメリット)
+  - [2. 環境構築](#2-環境構築)
+  - [3. GithubからCloneする](#3-githubからcloneする)
+  - [4. APIを取得しよう](#4-apiを取得しよう)
+  - [5. コードの説明](#5-コードの説明)
+  - [6. いじってみよう](#6-いじってみよう)
 
 ---
 
@@ -61,7 +66,7 @@ Webアプリを作成するために、以下の環境を整えましょう。
 
 このチュートリアルのサンプルコードはGitHubで公開されています。リポジトリを自分のパソコンにダウンロード（クローン）しましょう。
 
-1. GitHubのリポジトリページ（[https://github.com/meo0/nasaapi-webtutorial]）を開く
+1. GitHubのリポジトリページ（<https://github.com/meo0/nasaapi-webtutorial>）を開く
 2. 「Code」ボタンをクリックし、「HTTPS」を選択
 3. 表示されたURLをコピー
 4. ターミナル（コマンドプロンプト）で、保存したいフォルダに移動して以下を実行
@@ -78,7 +83,7 @@ git clone https://github.com/meo0/nasaapi-webtutorial.git
 
 NASAのAPIを利用するためには、APIキーが必要です。以下の手順で取得しましょう。
 
-1. NASA APIの公式サイト（[https://api.nasa.gov/]）にアクセス
+1. NASA APIの公式サイト（<https://api.nasa.gov/>）にアクセス
 2. 「Sign Up」をクリックして必要事項を入力
 3. メールアドレスにAPIキーが届くので、コピーして`home.html`の該当する部分をおきかえる。
 
